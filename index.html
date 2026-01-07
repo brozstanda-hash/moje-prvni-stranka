@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj první web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="topbar">
+                <div class="logo">Můj Web</div>
+
+                <nav class="nav">
+                    <a href="#o-mne">O mně</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
+            </div>
+
+            <h1>Můj první web</h1>
+            <p>Ručně napsaná stránka bez šablon.</p>
+            <button class="btn" id="btnKontakt" type="button">Napiš mi</button>
+        </header>
+
+        <main class="main">
+    <h2 id="o-mne">O mně</h2>
+    <p>Tady bude krátký popis. (Později dáme obrázek a tlačítko.)</p>
+
+    <h2 id="kontakt">Kontakt</h2>
+
+    <form class="form" id="kontaktForm" novalidate>
+        <label>
+            Jméno
+            <input type="text" name="jmeno" required>
+        </label>
+
+        <label>
+            Email
+            <input type="email" name="email" required>
+        </label>
+
+        <label>
+            Zpráva
+            <textarea name="zprava" rows="4" required></textarea>
+        </label>
+
+        <button class="btn" type="submit">Odeslat</button>
+    </form>
+    <p id="formMsg" class="msg"></p>
+</main>
+
+        <footer class="footer">
+            <p>© 2026</p>
+        </footer>
+    </div>
+<script src="script.js"></script>    
+</body>
+</html>
+
