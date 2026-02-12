@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Můj první web</title>
+    <title>Pizza z pece</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,6 +15,7 @@
 
                 <nav class="nav">
                     <a href="#o-mne">O mně</a>
+                    <a href="#objednavka">Objednávka</a>
                     <a href="#kontakt">Kontakt</a>
                 </nav>
             </div>
@@ -25,112 +26,97 @@
         </header>
 
         <main class="main">
-    <h2 id="o-mne">O mně</h2>
-    <p>Tady bude krátký popis. (Později dáme obrázek a tlačítko.)</p>
-<h2 id="objednavka">Objednávka</h2>
-<p>Vyber pizzu, vyplň údaje a odešli objednávku. Platby přidáme v dalším kroku.</p>
+            <h2 id="o-mne">O mně</h2>
+            <p>Tady bude krátký popis. (Později dáme obrázek a tlačítko.)</p>
 
-<form class="form" id="orderForm" novalidate>
-  <label>
-    Jméno
-    <input type="text" name="jmeno">
-  </label>
+            <h2 id="objednavka">Objednávka</h2>
+            <p>Vyber pizzu, vyplň údaje a odešli objednávku. Platby přidáme v dalším kroku.</p>
 
-  <label>
-    Telefon
-    <input type="tel" name="telefon" placeholder="+420 777 111 222">
-  </label>
+            <form class="form" id="orderForm" novalidate>
+                <label>
+                    Jméno
+                    <input type="text" name="jmeno">
+                </label>
 
-  <label>
-    Email (volitelné)
-    <input type="email" name="email" placeholder="email@domena.cz">
-  </label>
+                <label>
+                    Telefon
+                    <input type="tel" name="telefon" placeholder="+420 777 111 222">
+                </label>
 
-  <label>
-    Způsob převzetí
-    <select name="typ">
-      <option value="rozvoz">Rozvoz</option>
-      <option value="osobni">Osobní odběr</option>
-    </select>
-  </label>
+                <label>
+                    Email (přijde potvrzení)
+                    <input type="email" name="email" required placeholder="email@domena.cz">
+                </label>
 
-  <label>
-    Adresa (jen pro rozvoz)
-    <input type="text" name="adresa" placeholder="Ulice 12, město">
-  </label>
+                <label>
+                    Způsob převzetí
+                    <select name="typ">
+                        <option value="rozvoz">Rozvoz</option>
+                        <option value="osobni">Osobní odběr</option>
+                    </select>
+                </label>
 
-  <label>
-    Poznámka (volitelné)
-    <input type="text" name="poznamka" placeholder="Bez cibule, zvonek nefunguje…">
-  </label>
+                <label>
+                    Adresa (jen pro rozvoz)
+                    <input type="text" name="adresa" placeholder="Ulice 12, město">
+                </label>
 
-  <fieldset class="fieldset">
-    <legend>Vyber pizzu</legend>
+                <label>
+                    Poznámka (volitelné)
+                    <input type="text" name="poznamka" placeholder="Bez cibule, zvonek nefunguje…">
+                </label>
 
-    <label class="row">
-      <input type="checkbox" name="item" value="Margherita|179">
-      <span>Margherita</span>
-      <span class="muted">179 Kč</span>
-    </label>
+                <fieldset class="fieldset">
+                    <legend>Vyber pizzu</legend>
 
-    <label class="row">
-      <input type="checkbox" name="item" value="Šunková|199">
-      <span>Šunková</span>
-      <span class="muted">199 Kč</span>
-    </label>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Margherita|179">
+                        <span>Margherita</span>
+                        <span class="muted">179 Kč</span>
+                    </label>
 
-    <label class="row">
-      <input type="checkbox" name="item" value="Salámová|209">
-      <span>Salámová</span>
-      <span class="muted">209 Kč</span>
-    </label>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Šunková|199">
+                        <span>Šunková</span>
+                        <span class="muted">199 Kč</span>
+                    </label>
 
-    <label class="row">
-      <input type="checkbox" name="item" value="Prosciutto|229">
-      <span>Prosciutto</span>
-      <span class="muted">229 Kč</span>
-    </label>
-  </fieldset>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Salámová|209">
+                        <span>Salámová</span>
+                        <span class="muted">209 Kč</span>
+                    </label>
 
-  <div class="summary">
-    <div>Mezisoučet: <strong><span id="sum">0</span> Kč</strong></div>
-    <div>Rozvoz: <strong><span id="delivery">0</span> Kč</strong></div>
-    <div class="total">Celkem: <strong><span id="total">0</span> Kč</strong></div>
-  </div>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Prosciutto|229">
+                        <span>Prosciutto</span>
+                        <span class="muted">229 Kč</span>
+                    </label>
+                </fieldset>
 
-  <button class="btn" type="submit">Odeslat objednávku</button>
-</form>
+                <div class="summary">
+                    <div>Mezisoučet: <strong><span id="sum">0</span> Kč</strong></div>
+                    <div>Rozvoz: <strong><span id="delivery">0</span> Kč</strong></div>
+                    <div class="total">Celkem: <strong><span id="total">0</span> Kč</strong></div>
+                </div>
 
-<p id="orderMsg" class="msg"></p>
+                <button class="btn" type="submit">Odeslat objednávku</button>
+            </form>
 
-    <h2 id="kontakt">Kontakt</h2>
+            <p id="orderMsg" class="msg"></p>
 
-    <form class="form" id="kontaktForm" novalidate>
-        <label>
-            Jméno
-            <input type="text" name="jmeno" required>
-        </label>
-
-        <label>
-            Email
-            <input type="email" name="email" required>
-        </label>
-
-        <label>
-            Zpráva
-            <textarea name="zprava" rows="4" required></textarea>
-        </label>
-
-        <button class="btn" type="submit">Odeslat</button>
-    </form>
-    <p id="formMsg" class="msg"></p>
-</main>
+            <h2 id="kontakt">Kontakt</h2>
+            <p><strong>Telefon:</strong> <a href="tel:+420777111222">+420 777 111 222</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@pizzerie-stanley.cz">info@pizzerie-stanley.cz</a></p>
+            <p><strong>Adresa:</strong> Doplň adresu</p>
+            <p><strong>Otevírací doba:</strong> Po–Ne 11:00–22:00</p>
+        </main>
 
         <footer class="footer">
             <p>© 2026</p>
         </footer>
     </div>
-<script src="script.js"></script>    
+
+    <script src="script.js"></script>
 </body>
 </html>
-
