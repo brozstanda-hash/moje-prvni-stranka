@@ -11,7 +11,7 @@
     <div class="container">
         <header class="header">
             <div class="topbar">
-                <div class="logo">Můj Web</div>
+                <div class="logo">pizza z pece</div>
 
                 <nav class="nav">
                     <a href="#o-mne">O mně</a>
@@ -19,14 +19,89 @@
                 </nav>
             </div>
 
-            <h1>Můj první web</h1>
-            <p>Ručně napsaná stránka bez šablon.</p>
-            <button class="btn" id="btnKontakt" type="button">Napiš mi</button>
+            <h1>Pizza z pece na dřevo</h1>
+            <p>Italské čerstvé suroviny</p>
+            <button class="btn" id="btnKontakt" type="button">Objednat</button>
         </header>
 
         <main class="main">
     <h2 id="o-mne">O mně</h2>
     <p>Tady bude krátký popis. (Později dáme obrázek a tlačítko.)</p>
+<h2 id="objednavka">Objednávka</h2>
+<p>Vyber pizzu, vyplň údaje a odešli objednávku. Platby přidáme v dalším kroku.</p>
+
+<form class="form" id="orderForm" novalidate>
+  <label>
+    Jméno
+    <input type="text" name="jmeno">
+  </label>
+
+  <label>
+    Telefon
+    <input type="tel" name="telefon" placeholder="+420 777 111 222">
+  </label>
+
+  <label>
+    Email (volitelné)
+    <input type="email" name="email" placeholder="email@domena.cz">
+  </label>
+
+  <label>
+    Způsob převzetí
+    <select name="typ">
+      <option value="rozvoz">Rozvoz</option>
+      <option value="osobni">Osobní odběr</option>
+    </select>
+  </label>
+
+  <label>
+    Adresa (jen pro rozvoz)
+    <input type="text" name="adresa" placeholder="Ulice 12, město">
+  </label>
+
+  <label>
+    Poznámka (volitelné)
+    <input type="text" name="poznamka" placeholder="Bez cibule, zvonek nefunguje…">
+  </label>
+
+  <fieldset class="fieldset">
+    <legend>Vyber pizzu</legend>
+
+    <label class="row">
+      <input type="checkbox" name="item" value="Margherita|179">
+      <span>Margherita</span>
+      <span class="muted">179 Kč</span>
+    </label>
+
+    <label class="row">
+      <input type="checkbox" name="item" value="Šunková|199">
+      <span>Šunková</span>
+      <span class="muted">199 Kč</span>
+    </label>
+
+    <label class="row">
+      <input type="checkbox" name="item" value="Salámová|209">
+      <span>Salámová</span>
+      <span class="muted">209 Kč</span>
+    </label>
+
+    <label class="row">
+      <input type="checkbox" name="item" value="Prosciutto|229">
+      <span>Prosciutto</span>
+      <span class="muted">229 Kč</span>
+    </label>
+  </fieldset>
+
+  <div class="summary">
+    <div>Mezisoučet: <strong><span id="sum">0</span> Kč</strong></div>
+    <div>Rozvoz: <strong><span id="delivery">0</span> Kč</strong></div>
+    <div class="total">Celkem: <strong><span id="total">0</span> Kč</strong></div>
+  </div>
+
+  <button class="btn" type="submit">Odeslat objednávku</button>
+</form>
+
+<p id="orderMsg" class="msg"></p>
 
     <h2 id="kontakt">Kontakt</h2>
 

@@ -132,4 +132,49 @@ body {
 .input-error {
   border-color: #ff6b6b !important;
 }
+.fieldset {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.fieldset legend {
+  font-weight: bold;
+  padding: 0 6px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 6px;
+  border-radius: 10px;
+}
+
+.row:hover {
+  background: #f7f7f7;
+}
+
+.muted {
+  color: #666;
+  font-size: 14px;
+}
+
+.summary {
+  display: grid;
+  gap: 6px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.total {
+  font-size: 18px;
+}
+
+.input-error {
+  border-color: #ff6b6b !important;
+}
 
