@@ -1,243 +1,122 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pizzerie Stanley</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzerie Stanley</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Sticky header mimo container, aby šel přes celou šířku -->
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Pizzerie Stanley">
-        <span class="brand-mark">🍕</span>
-        <span class="brand-text">
-          <strong>Pizzerie Stanley</strong>
-          <em>pizza z pece na dřevo</em>
-        </span>
-      </a>
 
-      <nav class="nav" id="mainNav">
-        <a href="#o-mne">O nás</a>
-        <a href="#objednavka">Objednávka</a>
-        <a href="#kontakt">Kontakt</a>
-        <a class="btn btn-primary" href="#objednavka">Objednat</a>
-      </nav>
+    <div class="container">
+        <header class="header">
+            <div class="topbar">
+                <div class="logo">Pizzerie Stanley</div>
 
-      <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false">☰</button>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="badge">Dřevěná pec • čerstvé suroviny • rychlé potvrzení</p>
-          <h1>Pizza z pece na dřevo</h1>
-          <p class="lead">Italské čerstvé suroviny. Objednávka za minutku — ozveme se a potvrdíme.</p>
-
-          <div class="hero-actions">
-            <!-- zachováme tvůj ID pro tlačítko, ať si to můžeš v JS scrollnout -->
-            <button class="btn btn-primary" id="btnKontakt" type="button">Objednat</button>
-            <a class="btn btn-ghost" href="#kontakt">Kontakt</a>
-          </div>
-
-          <div class="hero-meta">
-            <div class="meta-item">
-              <span class="meta-label">Telefon</span>
-              <a class="meta-value" href="tel:+420777111222">+420 777 111 222</a>
+                <nav class="nav">
+                    <a href="#o-mne">O nás</a>
+                    <a href="#objednavka">Objednávka</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
             </div>
-            <div class="meta-item">
-              <span class="meta-label">Otevírací doba</span>
-              <span class="meta-value">Po–Ne 11:00–22:00</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="hero-card">
-          <div class="card">
-            <h2>Nejčastější výběr</h2>
-            <p class="muted">Margherita • Šunková • Prosciutto</p>
-            <ul class="pill-list">
-              <li>✅ Tenké těsto</li>
-              <li>✅ Poctivé suroviny</li>
-              <li>✅ Dřevěná pec</li>
-            </ul>
-            <a class="btn btn-secondary" href="#objednavka">Jdu objednat</a>
-          </div>
-        </div>
-      </div>
-    </section>
+            <h1>Pizza z pece na dřevo</h1>
+            <p>Italské čerstvé suroviny</p>
+            <button class="btn" id="btnKontakt" type="button">Objednat</button>
+        </header>
 
-    <!-- CONTENT -->
-    <section class="section" id="o-mne">
-      <div class="container">
-        <div class="section-head">
-          <h2>O nás</h2>
-          <p class="muted">Krátký popis (později fotka + tlačítko).</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Poctivá pizza bez kompromisů</h3>
+        <main class="main">
+            <h2 id="o-mne">O nás</h2>
             <p>Tady bude krátký popis. (Později dáme obrázek a tlačítko.)</p>
 
-            <div class="stats">
-              <div class="stat"><strong>🔥</strong><span>Dřevěná pec</span></div>
-              <div class="stat"><strong>🧀</strong><span>Čerstvé suroviny</span></div>
-              <div class="stat"><strong>⏱️</strong><span>Rychlé potvrzení</span></div>
-            </div>
-          </div>
+            <h2 id="objednavka">Objednávka</h2>
+            <p>Vyber pizzu, vyplň údaje a odešli objednávku. Platby přidáme v dalším kroku.</p>
 
-          <div class="card media">
-            <div class="media-box">Sem může přijít fotka pizzy/pece</div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <form class="form" id="orderForm" novalidate>
+                <label>
+                    Jméno
+                    <input type="text" name="jmeno">
+                </label>
 
-    <!-- ORDER -->
-    <section class="section section-accent" id="objednavka">
-      <div class="container">
-        <div class="section-head">
-          <h2>Objednávka</h2>
-          <p class="muted">Vyber pizzu, vyplň údaje a odešli objednávku. Platby přidáme v dalším kroku.</p>
-        </div>
+                <label>
+                    Telefon
+                    <input type="tel" name="telefon" placeholder="+420 777 111 222">
+                </label>
 
-        <div class="card form-card">
-          <!-- FORM: funkční část NECHÁNA (id, names, sum/delivery/total) -->
-          <form class="form" id="orderForm" novalidate>
+                <label>
+                    Email (přijde potvrzení)
+                    <input type="email" name="email" required placeholder="email@domena.cz">
+                </label>
 
-            <div class="form-grid">
-              <label class="field">
-                <span>Jméno</span>
-                <input type="text" name="jmeno">
-              </label>
+                <label>
+                    Způsob převzetí
+                    <select name="typ">
+                        <option value="rozvoz">Rozvoz</option>
+                        <option value="osobni">Osobní odběr</option>
+                    </select>
+                </label>
 
-              <label class="field">
-                <span>Telefon</span>
-                <input type="tel" name="telefon" placeholder="+420 777 111 222">
-              </label>
+                <label>
+                    Adresa (jen pro rozvoz)
+                    <input type="text" name="adresa" placeholder="Ulice 12, město">
+                </label>
 
-              <label class="field">
-                <span>Email (přijde potvrzení)</span>
-                <input type="email" name="email" required placeholder="email@domena.cz">
-              </label>
+                <label>
+                    Poznámka (volitelné)
+                    <input type="text" name="poznamka" placeholder="Bez cibule, zvonek nefunguje…">
+                </label>
 
-              <label class="field">
-                <span>Způsob převzetí</span>
-                <select name="typ">
-                  <option value="rozvoz">Rozvoz</option>
-                  <option value="osobni">Osobní odběr</option>
-                </select>
-              </label>
+                <fieldset class="fieldset">
+                    <legend>Vyber pizzu</legend>
 
-              <label class="field field-full">
-                <span>Adresa (jen pro rozvoz)</span>
-                <input type="text" name="adresa" placeholder="Ulice 12, město">
-              </label>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Margherita|179">
+                        <span>Margherita</span>
+                        <span class="muted">179 Kč</span>
+                    </label>
 
-              <label class="field field-full">
-                <span>Poznámka (volitelné)</span>
-                <input type="text" name="poznamka" placeholder="Bez cibule, zvonek nefunguje…">
-              </label>
-            </div>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Šunková|199">
+                        <span>Šunková</span>
+                        <span class="muted">199 Kč</span>
+                    </label>
 
-            <fieldset class="fieldset">
-              <legend>Vyber pizzu</legend>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Salámová|209">
+                        <span>Salámová</span>
+                        <span class="muted">209 Kč</span>
+                    </label>
 
-              <label class="row">
-                <input type="checkbox" name="item" value="Margherita|179">
-                <span>Margherita</span>
-                <span class="muted">179 Kč</span>
-              </label>
+                    <label class="row">
+                        <input type="checkbox" name="item" value="Prosciutto|229">
+                        <span>Prosciutto</span>
+                        <span class="muted">229 Kč</span>
+                    </label>
+                </fieldset>
 
-              <label class="row">
-                <input type="checkbox" name="item" value="Šunková|199">
-                <span>Šunková</span>
-                <span class="muted">199 Kč</span>
-              </label>
+                <div class="summary">
+                    <div>Mezisoučet: <strong><span id="sum">0</span> Kč</strong></div>
+                    <div>Rozvoz: <strong><span id="delivery">0</span> Kč</strong></div>
+                    <div class="total">Celkem: <strong><span id="total">0</span> Kč</strong></div>
+                </div>
 
-              <label class="row">
-                <input type="checkbox" name="item" value="Salámová|209">
-                <span>Salámová</span>
-                <span class="muted">209 Kč</span>
-              </label>
+                <button class="btn" type="submit">Odeslat objednávku</button>
+            </form>
 
-              <label class="row">
-                <input type="checkbox" name="item" value="Prosciutto|229">
-                <span>Prosciutto</span>
-                <span class="muted">229 Kč</span>
-              </label>
-            </fieldset>
+            <p id="orderMsg" class="msg"></p>
 
-            <div class="summary">
-              <div>Mezisoučet: <strong><span id="sum">0</span> Kč</strong></div>
-              <div>Rozvoz: <strong><span id="delivery">0</span> Kč</strong></div>
-              <div class="total">Celkem: <strong><span id="total">0</span> Kč</strong></div>
-            </div>
+            <h2 id="kontakt">Kontakt</h2>
+            <p><strong>Telefon:</strong> <a href="tel:+420777111222">+420 777 111 222</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@pizzerie-stanley.cz">info@pizzerie-stanley.cz</a></p>
+            <p><strong>Adresa:</strong> Doplň adresu</p>
+            <p><strong>Otevírací doba:</strong> Po–Ne 11:00–22:00</p>
+        </main>
 
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Odeslat objednávku</button>
-              <p class="fineprint">Odesláním souhlasíš se zpracováním údajů pro vyřízení objednávky.</p>
-            </div>
-          </form>
-
-          <p id="orderMsg" class="msg"></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="kontakt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Kontakt</h2>
-          <p class="muted">Nejrychlejší je telefon.</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Telefon</h3>
-            <p><a href="tel:+420777111222">+420 777 111 222</a></p>
-          </div>
-
-          <div class="card">
-            <h3>Email</h3>
-            <p><a href="mailto:info@pizzerie-stanley.cz">info@pizzerie-stanley.cz</a></p>
-            <p class="muted">Odpovídáme co nejdřív</p>
-          </div>
-
-          <div class="card">
-            <h3>Adresa / výdej</h3>
-            <p>Doplň adresu</p>
-            <p class="muted">Po–Ne 11:00–22:00</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© 2026 Pizzerie Stanley</span>
-      <span class="muted">pizza-stanley.cz</span>
+        <footer class="footer">
+            <p>© 2026</p>
+        </footer>
     </div>
-  </footer>
 
-  <script>
-    // mobile menu
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-  </script>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

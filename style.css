@@ -1,239 +1,188 @@
-html { scroll-behavior: smooth; }
-
-:root{
-  --bg: #f2f2f2;
-  --card: #ffffff;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --line: #e5e7eb;
-
-  --accent: #c62828;
-  --accent2: #ffb020;
-
-  --radius: 14px;
-  --shadow: 0 10px 28px rgba(0,0,0,0.08);
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
+body {
+    margin: 0;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
 }
 
-.container{
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* karty */
-.header, .main, .footer{
-  background: var(--card);
-  padding: 22px;
-  border-radius: var(--radius);
-  margin-bottom: 15px;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--line);
+.header, .main, .footer {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-/* ===== MENU / TOPBAR ===== */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.header h1 {
+    margin-top: 0;
+    color: #c62828;
+}
+
+/* ----- MENU ----- */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.nav a:hover {
+    background: #f2f2f2;
+}
+
+/* ----- OBSAH ----- */
+
+.main h2 {
+    margin-top: 80px;
+    margin-bottom: 8px;
+}
+
+.footer {
+    text-align: center;
+    color: #666;
+}
+
+/* ----- MOBIL ----- */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .header, .main, .footer {
+        padding: 14px;
+    }
+}
+.form {
+  display: grid;
   gap: 12px;
-  margin-bottom: 14px;
-}
-
-.logo{
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: .2px;
-}
-
-.nav{
-  display:flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.nav a{
-  display:inline-block;
-  text-decoration:none;
-  color: var(--text);
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  background: transparent;
-  font-weight: 700;
-}
-
-.nav a:hover{
-  background: #f7f7f7;
-  border-color: #ededed;
-}
-
-/* ===== HEADER TEXT ===== */
-.header h1{
-  margin: 10px 0 6px;
-  color: var(--accent);
-  font-size: 34px;
-}
-
-.header p{
-  margin: 0 0 14px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-/* tlačítko */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid #d8d8d8;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.btn:hover{ filter: brightness(0.95); }
-.btn:active{ transform: translateY(1px); }
-
-/* ===== OBSAH ===== */
-.main h2{
-  margin-top: 70px;
-  margin-bottom: 8px;
-  font-size: 24px;
-}
-
-.main p{
-  color: #374151;
-}
-
-.footer{
-  text-align:center;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-/* odkazy */
-.main a{
-  color: var(--accent);
-  font-weight: 800;
-  text-decoration:none;
-}
-.main a:hover{ text-decoration: underline; }
-
-/* ===== FORM ===== */
-.form{
-  display:grid;
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.form label{
-  display:grid;
-  gap: 6px;
-  font-weight: 800;
-  color: #374151;
-}
-
-.form input, .form textarea, .form select{
-  padding: 11px 12px;
-  border-radius: 12px;
-  border: 1px solid #dcdcdc;
-  font: inherit;
-  background: #fff;
-  outline: none;
-}
-
-.form input:focus, .form textarea:focus, .form select:focus{
-  border-color: rgba(198,40,40,0.55);
-  box-shadow: 0 0 0 4px rgba(198,40,40,0.10);
-}
-
-#formMsg{
   margin-top: 10px;
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
   font-weight: bold;
 }
 
-/* zprávy */
-.msg{
+.form input, .form textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font: inherit;
+}
+#formMsg {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.msg {
   margin-top: 10px;
   padding: 10px 12px;
-  border-radius: 12px;
-  display: none;
-  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: none; /* zobrazíme až když je zpráva */
 }
 
-.msg--error{
-  display:block;
+.msg--error {
+  display: block;
   background: #ffe5e5;
-  border-color: #ffb3b3;
+  border: 1px solid #ffb3b3;
 }
 
-.msg--success{
-  display:block;
+.msg--success {
+  display: block;
   background: #e7ffe7;
-  border-color: #b8ffb8;
+  border: 1px solid #b8ffb8;
 }
 
 /* zvýraznění špatných polí */
-.input-error{
+.input-error {
   border-color: #ff6b6b !important;
-  box-shadow: 0 0 0 4px rgba(255,107,107,0.15);
 }
-
-/* ===== PIZZA LIST ===== */
-.fieldset{
-  border: 1px solid #ededed;
-  border-radius: 14px;
+.fieldset {
+  border: 1px solid #eee;
+  border-radius: 12px;
   padding: 12px;
-  background: #fafafa;
 }
 
-.fieldset legend{
-  font-weight: 900;
+.fieldset legend {
+  font-weight: bold;
   padding: 0 6px;
 }
 
-.row{
-  display:grid;
+.row {
+  display: grid;
   grid-template-columns: 20px 1fr auto;
-  align-items:center;
+  align-items: center;
   gap: 10px;
-  padding: 10px 10px;
-  border-radius: 12px;
+  padding: 8px 6px;
+  border-radius: 10px;
 }
 
-.row:hover{ background: #f2f2f2; }
+.row:hover {
+  background: #f7f7f7;
+}
 
-.muted{
-  color: var(--muted);
+.muted {
+  color: #666;
   font-size: 14px;
 }
 
-/* souhrn */
-.summary{
-  display:grid;
+.summary {
+  display: grid;
   gap: 6px;
   background: #fafafa;
   border: 1px solid #eee;
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 12px;
 }
 
-.total{ font-size: 18px; }
-
-/* ===== MOBIL ===== */
-@media (max-width: 600px){
-  .container{ padding: 12px; }
-  .header, .main, .footer{ padding: 16px; }
-  .topbar{ flex-direction: column; align-items:flex-start; }
-  .header h1{ font-size: 28px; }
+.total {
+  font-size: 18px;
 }
+
+.input-error {
+  border-color: #ff6b6b !important;
+}
+.main a{
+  color:#c62828;
+  font-weight:700;
+  text-decoration:none;
+}
+.main a:hover{
+  text-decoration:underline;
+}
+
